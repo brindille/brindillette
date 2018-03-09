@@ -21,7 +21,7 @@ npm install
 
 ## File structure
 
-Organise your files in a component structure: JavaScript, template and styles of a component should be in the same folder. (ex: `/src/views/components/button-test`.)
+Organise your files in a component structure: JavaScript and styles for a component should be in the same folder. (ex: `/src/layouts/header`.)
 Then, they will be build in the `/build` folder.
 
 Images, fonts and other assets have to be in the `/assets/{images,fonts}` folders.
