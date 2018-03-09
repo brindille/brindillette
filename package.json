@@ -1,0 +1,82 @@
+{
+  "name": "brindillette",
+  "version": "0.1.0",
+  "description": "serverless version of Brindille",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "npm run server & npm run watch",
+    "server": "browser-sync start --server '' --files 'build,index.html'",
+    "watch": "brindille watch --output build babelify aliasify",
+    "build": "brindille build --output build babelify aliasify",
+    "lint": "standard --verbose | snazzy"
+  },
+  "aliasify": {
+    "aliases": {
+      "lib": "./src/lib/",
+      "config": "./src/config/",
+      "views": "./src/views/"
+    }
+  },
+  "author": "Hellohikimori",
+  "license": "MIT",
+  "standard": {
+    "ignore": [
+      "/build"
+    ],
+    "globals": [
+      "Image",
+      "Audio",
+      "TweenLite",
+      "TweenMax",
+      "TimelineLite",
+      "TimelineMax",
+      "Expo",
+      "Cubic",
+      "Quad",
+      "Back",
+      "Power0",
+      "Circ",
+      "Quint",
+      "Bounce",
+      "Linear",
+      "Elastic",
+      "RoughEase",
+      "YT",
+      "PIXI",
+      "THREE"
+    ]
+  },
+  "devDependencies": {
+    "aliasify": "*",
+    "babel-preset-env": "^1.6.0",
+    "babelify": "*",
+    "brindille-cli": "^1.1.2",
+    "browser-sync": "^2.23.6",
+    "snazzy": "^6.0.0",
+    "standard": "^9.0.2"
+  },
+  "dependencies": {
+    "brindille-component": "*",
+    "brindille-interactive-component": "*",
+    "brindille-resize": "*",
+    "brindille-scroll": "*",
+    "brindille-stylus-extends": "*",
+    "component-emitter": "^1.2.1",
+    "dom-classes": "*",
+    "dom-event": "*",
+    "emitter-component": "*",
+    "gsap": "*",
+    "stylus-easing": "^1.0.0",
+    "stylus-font-face": "*",
+    "stylus-media-queries": "^1.0.0",
+    "stylus-reset": "0.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/brindille/brindille.git"
+  },
+  "homepage": "https://github.com/brindille/brindille",
+  "bugs": {
+    "url": "https://github.com/brindille/brindille/issues"
+  }
+}
