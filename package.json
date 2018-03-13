@@ -4,56 +4,31 @@
   "description": "serverless version of Brindille",
   "main": "src/index.js",
   "scripts": {
-    "start": "npm run server & npm run watch",
-    "server": "browser-sync start --server '' --files 'build,index.html'",
-    "watch": "brindille watch --output build babelify aliasify",
-    "build": "brindille build --output build babelify aliasify",
-    "lint": "standard --verbose | snazzy"
+    "start": "webpack-dev-server --open --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js",
+    "precommit": "lint-staged"
   },
-  "aliasify": {
-    "aliases": {
-      "lib": "./src/lib/",
-      "config": "./src/config/",
-      "views": "./src/views/"
-    }
+  "lint-staged": {
+    "*.{js,json,css,md}": ["prettier --write", "git add"]
   },
   "author": "Hellohikimori",
   "license": "MIT",
-  "standard": {
-    "ignore": [
-      "/build"
-    ],
-    "globals": [
-      "Image",
-      "Audio",
-      "TweenLite",
-      "TweenMax",
-      "TimelineLite",
-      "TimelineMax",
-      "Expo",
-      "Cubic",
-      "Quad",
-      "Back",
-      "Power0",
-      "Circ",
-      "Quint",
-      "Bounce",
-      "Linear",
-      "Elastic",
-      "RoughEase",
-      "YT",
-      "PIXI",
-      "THREE"
-    ]
-  },
   "devDependencies": {
-    "aliasify": "*",
-    "babel-preset-env": "^1.6.0",
-    "babelify": "*",
-    "brindille-cli": "^1.1.2",
-    "browser-sync": "^2.23.6",
-    "snazzy": "^6.0.0",
-    "standard": "^9.0.2"
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "babel-plugin-module-alias": "^1.6.0",
+    "babel-preset-env": "^1.6.1",
+    "css-loader": "^0.28.10",
+    "husky": "^0.14.3",
+    "lint-staged": "^7.0.0",
+    "prettier": "^1.11.1",
+    "style-loader": "^0.20.3",
+    "stylus-loader": "^3.0.2",
+    "uglifyjs-webpack-plugin": "^1.2.3",
+    "webpack": "^4.1.1",
+    "webpack-cli": "^2.0.11",
+    "webpack-dev-server": "^3.1.1",
+    "webpack-merge": "^4.1.2"
   },
   "dependencies": {
     "brindille-component": "*",
@@ -65,7 +40,6 @@
     "dom-classes": "*",
     "dom-event": "*",
     "emitter-component": "*",
-    "gsap": "*",
     "stylus-easing": "^1.0.0",
     "stylus-font-face": "*",
     "stylus-media-queries": "^1.0.0",
