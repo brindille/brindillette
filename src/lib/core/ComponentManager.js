@@ -1,26 +1,26 @@
 class ComponentManager {
-  constructor () {
+  constructor() {
     this.get = this.get.bind(this)
     this.components = {}
   }
 
-  register (componentName, componentClass) {
+  register(componentName, componentClass) {
     this.components[componentName] = componentClass
   }
 
-  registerMultiple (componentList) {
+  registerMultiple(componentList) {
     this.components = componentList
   }
 
-  get (componentName) {
+  get(componentName) {
     return this.components[componentName]
   }
 
-  setRootComponent (rootComponent) {
+  setRootComponent(rootComponent) {
     this.rootComponent = rootComponent
   }
 
-  getInstance (componentName) {
+  getInstance(componentName) {
     let component = this.rootComponent.findInstance(componentName)
     if (component) return component
     return console.error(`Couldn't find any instance of ${componentName}`)

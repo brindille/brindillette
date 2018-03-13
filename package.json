@@ -6,10 +6,11 @@
   "scripts": {
     "start": "webpack-dev-server --open --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
-    "precommit": "lint-staged"
+    "precommit": "lint-staged",
+    "lint": "prettier --single-quote --no-semi --write 'src/**/*.js'"
   },
   "lint-staged": {
-    "*.{js,json,css,md}": ["prettier --write", "git add"]
+    "*.{js}": ["prettier --single-quote --no-semi --write", "git add"]
   },
   "author": "Hellohikimori",
   "license": "MIT",

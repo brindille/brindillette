@@ -1,16 +1,16 @@
-import Component from "brindille-component";
-import "./header.styl";
+import Component from 'brindille-component'
+import './header.styl'
 
 export default class Header extends Component {
   constructor($el) {
-    super($el);
+    super($el)
 
     // Method bindings
 
     // Dom nodes registering
 
     // Event listeners
-    this.addEvents();
+    this.addEvents()
   }
 
   addEvents() {}
@@ -18,7 +18,7 @@ export default class Header extends Component {
   removeEvents() {}
 
   dispose() {
-    this.removeEvents();
-    super.dispose();
+    this.removeEvents()
+    super.dispose()
   }
 }
