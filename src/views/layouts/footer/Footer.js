@@ -6,7 +6,6 @@ export default class Footer extends Component {
     super($el)
 
     // Method bindings
-    for (let i = 0; i < 10; i++) { console.log('toto');   }
 
     // Dom nodes registering
 

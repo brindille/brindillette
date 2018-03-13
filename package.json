@@ -10,7 +10,7 @@
     "lint": "prettier --single-quote --no-semi --write 'src/**/*.js'"
   },
   "lint-staged": {
-    "*.{js}": ["prettier --single-quote --no-semi --write", "git add"]
+    "*.js": ["prettier --single-quote --no-semi --write", "git add"]
   },
   "author": "Hellohikimori",
   "license": "MIT",
