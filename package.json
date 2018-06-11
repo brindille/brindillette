@@ -51,7 +51,7 @@
     "babel-preset-env": "^1.6.0",
     "babelify": "*",
     "brindille-cli": "^1.1.2",
-    "browser-sync": "^2.23.6",
+    "browser-sync": "^2.24.4",
     "snazzy": "^6.0.0",
     "standard": "^9.0.2"
   },
